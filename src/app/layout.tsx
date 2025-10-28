@@ -129,9 +129,9 @@ export default function RootLayout({
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
-                "reviewCount": "37",
+                "reviewCount": "16",
                 "bestRating": "5",
-                "worstRating": "1"
+                "worstRating": "5"
               }
             })
           }}
