@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { Heart, Award, Sparkles } from 'lucide-react';
+import { Heart, Award, Sparkles, Instagram } from 'lucide-react';
 
 export default function About() {
   const milestones = [
@@ -74,7 +74,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#9B7AB8]/20 to-transparent" />
             </div>
             
-            {/* Floating badge */}
+            {/* Floating badges */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -92,6 +92,28 @@ export default function About() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Instagram badge */}
+            <motion.a
+              href="https://www.instagram.com/odyssee_sucree/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition-transform cursor-pointer"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#E1306C] to-[#C13584] flex items-center justify-center">
+                  <Instagram className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-[#2D2D2D]">+500 abonnés</p>
+                  <p className="text-sm text-[#6B6B6B]">Sur Instagram</p>
+                </div>
+              </div>
+            </motion.a>
           </motion.div>
 
           {/* Text Side */}

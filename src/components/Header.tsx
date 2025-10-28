@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,9 +49,16 @@ export default function Header() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="relative z-10"
+            className="relative z-10 flex items-center gap-3"
           >
-            <h1 className="text-2xl lg:text-3xl font-bold text-[#2D2D2D]">
+            <Image
+              src="/logo.png"
+              alt="Odyssée Sucrée Logo"
+              width={50}
+              height={50}
+              className="object-contain"
+            />
+            <h1 className="text-2xl lg:text-3xl font-bold text-[#9B7AB8]">
               Odyssée Sucrée
             </h1>
           </motion.a>

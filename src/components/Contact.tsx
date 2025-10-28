@@ -78,8 +78,8 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Localisation',
-      value: 'Puycornet, France',
-      link: null
+      value: 'Puycornet (près de Montauban)',
+      link: 'https://maps.google.com/?q=101+Route+de+l\'Honor+de+Cos,+82220+Puycornet'
     }
   ];
 

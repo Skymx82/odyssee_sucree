@@ -1,0 +1,10 @@
+# robots.txt pour Odyssée Sucrée
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://odysseesucree.fr/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
