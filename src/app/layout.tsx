@@ -126,21 +126,75 @@ export default function RootLayout({
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Product",
-                    "name": "Wedding Cake sur mesure"
+                    "name": "Wedding Cake sur mesure",
+                    "description": "Wedding cake personnalisé pour votre mariage, créé sur mesure selon vos envies",
+                    "offers": {
+                      "@type": "Offer",
+                      "priceCurrency": "EUR",
+                      "price": "150",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "150",
+                        "priceCurrency": "EUR"
+                      },
+                      "availability": "https://schema.org/InStock",
+                      "url": "https://www.odysseesucree.com#contact"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "5",
+                      "reviewCount": "15"
+                    }
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Product",
-                    "name": "Gâteau d'anniversaire personnalisé"
+                    "name": "Gâteau d'anniversaire personnalisé",
+                    "description": "Gâteau d'anniversaire sur mesure, adapté à vos goûts et à votre thème",
+                    "offers": {
+                      "@type": "Offer",
+                      "priceCurrency": "EUR",
+                      "price": "80",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "80",
+                        "priceCurrency": "EUR"
+                      },
+                      "availability": "https://schema.org/InStock",
+                      "url": "https://www.odysseesucree.com#contact"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "5",
+                      "reviewCount": "12"
+                    }
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Product",
-                    "name": "Entremets artisanaux"
+                    "name": "Entremets artisanaux",
+                    "description": "Entremets artisanaux faits maison avec des ingrédients de qualité",
+                    "offers": {
+                      "@type": "Offer",
+                      "priceCurrency": "EUR",
+                      "price": "45",
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "45",
+                        "priceCurrency": "EUR"
+                      },
+                      "availability": "https://schema.org/InStock",
+                      "url": "https://www.odysseesucree.com#contact"
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "5",
+                      "reviewCount": "10"
+                    }
                   }
                 }
               ]

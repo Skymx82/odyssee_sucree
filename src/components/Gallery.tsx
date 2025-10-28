@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { creations, categories } from '@/data/creations';
 import { Plus } from 'lucide-react';
+import Lightbox from '@/components/Lightbox';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -123,43 +124,12 @@ export default function Gallery() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Lightbox Modal */}
-        <AnimatePresence>
-          {selectedImage && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-              onClick={() => setSelectedImage(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ type: 'spring', damping: 25 }}
-                className="relative max-w-5xl w-full aspect-square"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Image
-                  src={selectedImage}
-                  alt="Création"
-                  fill
-                  className="object-contain"
-                  sizes="90vw"
-                />
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors flex items-center justify-center"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Lightbox */}
+        <Lightbox
+          isOpen={selectedImage !== null}
+          imageSrc={selectedImage || ''}
+          onClose={() => setSelectedImage(null)}
+        />
 
         {/* Show More Button */}
         {!showAll && hasMore && (
