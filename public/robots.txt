@@ -4,7 +4,7 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://odysseesucree.fr/sitemap.xml
+Sitemap: https://www.odysseesucree.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

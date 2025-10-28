@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://odysseesucree.fr'),
+  metadataBase: new URL('https://www.odysseesucree.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Odyssée Sucrée | Pâtisserie Artisanale sur Mesure",
     description: "Pâtisserie artisanale d'exception à Puycornet, près de Montauban. Wedding cakes et créations sur mesure pour vos événements.",
-    url: 'https://odysseesucree.fr',
+    url: 'https://www.odysseesucree.com',
     siteName: 'Odyssée Sucrée',
     locale: 'fr_FR',
     type: 'website',
@@ -81,7 +81,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Bakery",
               "name": "Odyssée Sucrée",
-              "image": "https://odysseesucree.fr/logo.png",
+              "image": "https://www.odysseesucree.com/logo.png",
               "description": "Pâtisserie artisanale d'exception spécialisée dans les wedding cakes et créations sur mesure",
               "address": {
                 "@type": "PostalAddress",
@@ -95,7 +95,7 @@ export default function RootLayout({
                 "latitude": 44.1447,
                 "longitude": 1.4858
               },
-              "url": "https://odysseesucree.fr",
+              "url": "https://www.odysseesucree.com",
               "telephone": "+33634849182",
               "email": "odysseesucree82@gmail.com",
               "priceRange": "€€",
