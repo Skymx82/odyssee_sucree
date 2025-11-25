@@ -5,6 +5,7 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LegalModals from '@/components/LegalModals';
+import ChristmasPopup from '@/components/ChristmasPopup';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Footer />
       </main>
       <LegalModals />
+      <ChristmasPopup />
     </>
   );
 }

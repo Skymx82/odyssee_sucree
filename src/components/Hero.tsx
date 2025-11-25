@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight"
           >
-            L'art du cake design
+            L'art de la pâtisserie
             <br />
             <span className="text-[#FADADD] drop-shadow-[0_2px_8px_rgba(250,218,221,0.8)]">
               sur mesure

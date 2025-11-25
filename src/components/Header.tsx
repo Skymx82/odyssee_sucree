@@ -8,6 +8,7 @@ import Image from 'next/image';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   
   const headerOpacity = useTransform(scrollY, [0, 100], [0.95, 1]);
@@ -103,15 +104,74 @@ export default function Header() {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="md:hidden p-2 text-[#2D2D2D]"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-[#2D2D2D] z-50 relative"
             aria-label="Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+              />
             </svg>
           </motion.button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ 
+          opacity: isMobileMenuOpen ? 1 : 0,
+          y: isMobileMenuOpen ? 0 : -20,
+          pointerEvents: isMobileMenuOpen ? 'auto' : 'none'
+        }}
+        transition={{ duration: 0.3 }}
+        className="md:hidden fixed top-20 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-40 border-t border-gray-200"
+      >
+        <nav className="px-6 py-4 space-y-4">
+          {navItems.map((item, index) => (
+            <motion.a
+              key={item.href}
+              href={item.href}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ 
+                opacity: isMobileMenuOpen ? 1 : 0,
+                x: isMobileMenuOpen ? 0 : -20
+              }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-[#2D2D2D] hover:text-[#9B7AB8] transition-colors duration-300 text-lg font-medium py-2"
+            >
+              {item.label}
+            </motion.a>
+          ))}
+          
+          {/* Mobile CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ 
+              opacity: isMobileMenuOpen ? 1 : 0,
+              x: isMobileMenuOpen ? 0 : -20
+            }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            className="pt-4"
+          >
+            <Button 
+              asChild 
+              size="lg" 
+              className="w-full rounded-full px-8 py-6 text-base font-semibold shadow-lg"
+            >
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                Commander
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
+          </motion.div>
+        </nav>
+      </motion.div>
     </motion.header>
   );
 }
