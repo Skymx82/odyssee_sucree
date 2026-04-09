@@ -1,10 +1,22 @@
-# robots.txt pour Odyssée Sucrée
+# robots.txt - Odyssée Sucrée, pâtisserie artisanale Montauban
+# https://www.odysseesucree.com
+
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Sitemap
-Sitemap: https://www.odysseesucree.com/sitemap.xml
+# Bots IA : on les laisse passer pour gagner de la visibilité dans les LLM
+User-agent: GPTBot
+Allow: /
 
-# Crawl-delay
-Crawl-delay: 1
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap principal
+Sitemap: https://www.odysseesucree.com/sitemap.xml

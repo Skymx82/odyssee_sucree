@@ -11,7 +11,7 @@ import Lightbox from '@/components/Lightbox';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
   const [showAll, setShowAll] = useState(false);
 
   const filteredCreations = selectedCategory === 'all'
@@ -32,17 +32,18 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center mb-20"
         >
-          <Badge 
-            variant="secondary" 
+          <Badge
+            variant="secondary"
             className="mb-8 px-10 py-4 text-sm font-semibold tracking-wider uppercase"
           >
-            Notre Savoir-Faire
+            Notre Savoir-Faire de Cake Designer à Montauban
           </Badge>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D2D2D] mb-8 max-w-4xl">
-            Nos Créations
+            Nos créations de pâtisserie sur mesure
           </h2>
           <p className="text-xl text-[#6B6B6B] leading-relaxed max-w-3xl">
-            Découvrez notre collection de pâtisseries artisanales, créées avec passion et savoir-faire
+            Wedding cakes, layer cakes, number cakes, entremets et tartes artisanales. Plus de 50 créations imaginées
+            par Aurore pour les mariages et anniversaires à Montauban, Moissac, Castelsarrasin et dans tout le Tarn-et-Garonne.
           </p>
         </motion.div>
 
@@ -92,12 +93,14 @@ export default function Gallery() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.4, delay: index * 0.02 }}
                 className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all"
-                onClick={() => setSelectedImage(creation.image)}
+                onClick={() => setSelectedImage({ src: creation.image, alt: creation.alt })}
               >
                 <Image
                   src={creation.image}
-                  alt={creation.name}
+                  alt={creation.alt}
+                  title={creation.name}
                   fill
+                  loading={index < 4 ? 'eager' : 'lazy'}
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 />
@@ -108,6 +111,7 @@ export default function Gallery() {
                     <h3 className="text-white font-semibold text-lg mb-2">
                       {creation.name}
                     </h3>
+                    <p className="sr-only">{creation.description}</p>
                     <Badge 
                       variant="secondary" 
                       className="bg-white/20 backdrop-blur-sm text-white border-0"
@@ -127,7 +131,8 @@ export default function Gallery() {
         {/* Lightbox */}
         <Lightbox
           isOpen={selectedImage !== null}
-          imageSrc={selectedImage || ''}
+          imageSrc={selectedImage?.src || ''}
+          imageAlt={selectedImage?.alt || ''}
           onClose={() => setSelectedImage(null)}
         />
 

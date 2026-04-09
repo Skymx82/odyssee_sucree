@@ -24,10 +24,12 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Accueil', href: '#accueil' },
-    { label: 'Créations', href: '#creations' },
-    { label: 'À propos', href: '#apropos' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/#accueil' },
+    { label: 'Créations', href: '/#creations' },
+    { label: 'Wedding cake', href: '/wedding-cake-montauban' },
+    { label: 'Anniversaire', href: '/gateau-anniversaire-montauban' },
+    { label: 'À propos', href: '/#apropos' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -57,6 +59,7 @@ export default function Header() {
               alt="Odyssée Sucrée Logo"
               width={50}
               height={50}
+              style={{ width: 'auto', height: '50px' }}
               className="object-contain"
             />
             <h1 className="text-2xl lg:text-3xl font-bold text-[#9B7AB8]">

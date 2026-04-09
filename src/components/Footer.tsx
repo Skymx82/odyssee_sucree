@@ -9,9 +9,18 @@ export default function Footer() {
 
   const footerLinks = {
     entreprise: [
-      { label: 'À propos', href: '#apropos' },
-      { label: 'Nos créations', href: '#creations' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'À propos d\'Aurore', href: '/#apropos' },
+      { label: 'Nos créations', href: '/#creations' },
+      { label: 'Avis clients', href: '/#temoignages' },
+      { label: 'FAQ', href: '/#faq' },
+      { label: 'Contact et devis', href: '/#contact' },
+    ],
+    services: [
+      { label: 'Wedding cake Montauban', href: '/wedding-cake-montauban' },
+      { label: 'Gâteau anniversaire Montauban', href: '/gateau-anniversaire-montauban' },
+      { label: 'Entremets sur commande', href: '/#creations' },
+      { label: 'Tartes artisanales', href: '/#creations' },
+      { label: 'Mignardises de mariage', href: '/#creations' },
     ],
     legal: [
       { label: 'Mentions légales', href: '#mentions-legales' },
@@ -24,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-[#2D2D2D] to-[#1a1a1a] text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
@@ -33,6 +42,7 @@ export default function Footer() {
                 alt="Odyssée Sucrée"
                 width={50}
                 height={50}
+                style={{ width: 'auto', height: '50px' }}
                 className="object-contain"
               />
               <h3 className="text-2xl font-bold text-[#9B7AB8]">
@@ -69,7 +79,24 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6 text-[#FADADD]">Entreprise</h4>
             <ul className="space-y-3">
               {footerLinks.entreprise.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-[#9B7AB8] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services SEO */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-[#FADADD]">Nos prestations</h4>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-gray-400 hover:text-[#9B7AB8] transition-colors"
@@ -86,7 +113,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6 text-[#FADADD]">Informations légales</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-gray-400 hover:text-[#9B7AB8] transition-colors"

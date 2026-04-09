@@ -5,65 +5,374 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
+const SITE_URL = "https://www.odysseesucree.com";
+const OG_IMAGE = `${SITE_URL}/creations/wedding-cake-mariage-elegant-montauban.jpeg`;
+
 export const metadata: Metadata = {
-  title: "Odyssée Sucrée | Pâtisserie Artisanale sur Mesure à Montauban",
-  description: "Pâtisserie artisanale d'exception à Puycornet, près de Montauban. Wedding cakes, gâteaux d'anniversaire, entremets sur mesure. CAP Pâtissier, créations uniques pour vos événements.",
-  keywords: "pâtisserie Montauban, wedding cake Montauban, gâteau sur mesure, pâtisserie artisanale, cake design Tarn-et-Garonne, gâteau anniversaire, entremets, pâtisserie Puycornet",
-  authors: [{ name: "Aurore - Odyssée Sucrée" }],
-  creator: "Odyssée Sucrée",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Odyssée Sucrée : Wedding Cake et Pâtissier sur Mesure à Montauban (82)",
+    template: "%s | Odyssée Sucrée Montauban",
+  },
+  description:
+    "Pâtisserie artisanale à Montauban spécialisée en wedding cakes, gâteaux d'anniversaire et entremets sur mesure. Aurore, CAP Pâtissier formée en wedding cake design, livre Montauban, Moissac, Castelsarrasin et tout le Tarn-et-Garonne. Devis sous 24h.",
+  keywords: [
+    "wedding cake Montauban",
+    "pâtissier Montauban",
+    "pâtisserie Montauban",
+    "gâteau anniversaire Montauban",
+    "cake design Montauban",
+    "wedding cake Tarn-et-Garonne",
+    "pièce montée mariage Montauban",
+    "pâtissier mariage 82",
+    "number cake Montauban",
+    "layer cake Montauban",
+    "letter cake Montauban",
+    "entremets sur commande Montauban",
+    "pâtissière artisanale Puycornet",
+    "gâteau personnalisé Tarn-et-Garonne",
+    "Odyssée Sucrée",
+    "Aurore pâtissière Montauban",
+    "wedding cake Moissac",
+    "wedding cake Castelsarrasin",
+    "gâteau mariage Caussade",
+  ],
+  authors: [{ name: "Aurore Afchain", url: SITE_URL }],
+  creator: "Aurore Afchain - Odyssée Sucrée",
   publisher: "Odyssée Sucrée",
+  category: "Pâtisserie artisanale",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.odysseesucree.com'),
   alternates: {
-    canonical: '/',
+    canonical: "/",
+    languages: {
+      "fr-FR": "/",
+    },
   },
   openGraph: {
-    title: "Odyssée Sucrée | Pâtisserie Artisanale sur Mesure",
-    description: "Pâtisserie artisanale d'exception à Puycornet, près de Montauban. Wedding cakes et créations sur mesure pour vos événements.",
-    url: 'https://www.odysseesucree.com',
-    siteName: 'Odyssée Sucrée',
-    locale: 'fr_FR',
-    type: 'website',
+    title: "Odyssée Sucrée : Wedding Cakes et Pâtisserie sur Mesure à Montauban",
+    description:
+      "Wedding cakes, gâteaux d'anniversaire et entremets artisanaux par Aurore, pâtissière CAP formée en wedding cake design, à Puycornet près de Montauban (82). Devis sous 24h.",
+    url: SITE_URL,
+    siteName: "Odyssée Sucrée",
+    locale: "fr_FR",
+    type: "website",
     images: [
       {
-        url: '/photos site/wedding cake (2).jpeg',
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Odyssée Sucrée - Pâtisserie Artisanale',
+        alt: "Wedding cake élégant de l'atelier Odyssée Sucrée à Montauban",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: "Odyssée Sucrée | Pâtisserie Artisanale sur Mesure",
-    description: "Pâtisserie artisanale d'exception à Montauban. Wedding cakes et créations sur mesure.",
-    images: ['/photos site/wedding cake (2).jpeg'],
+    card: "summary_large_image",
+    title: "Odyssée Sucrée : Wedding Cakes Montauban",
+    description:
+      "Pâtisserie artisanale à Montauban : wedding cakes, gâteaux d'anniversaire et créations sur mesure par Aurore, CAP Pâtissier.",
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  verification: {
-    google: 'votre-code-google-search-console',
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo.png",
   },
+};
+
+// JSON-LD : Bakery + LocalBusiness, FAQPage, Service x2, Person, BreadcrumbList
+const bakerySchema = {
+  "@context": "https://schema.org",
+  "@type": ["Bakery", "LocalBusiness"],
+  "@id": `${SITE_URL}/#bakery`,
+  name: "Odyssée Sucrée",
+  alternateName: "Odyssée Sucrée Montauban",
+  legalName: "Odyssée Sucrée (Aurore Afchain)",
+  image: [
+    `${SITE_URL}/logo.png`,
+    `${SITE_URL}/creations/wedding-cake-mariage-elegant-montauban.jpeg`,
+    `${SITE_URL}/creations/wedding-cake-mariage-3-etages-montauban.jpeg`,
+  ],
+  logo: `${SITE_URL}/logo.png`,
+  description:
+    "Pâtisserie artisanale à Montauban spécialisée dans les wedding cakes, gâteaux d'anniversaire et entremets sur mesure. Aurore, CAP Pâtissier formée en wedding cake design, crée des pièces uniques pour mariages et événements dans le Tarn-et-Garonne.",
+  url: SITE_URL,
+  telephone: "+33634849182",
+  email: "odysseesucree82@gmail.com",
+  priceRange: "€€",
+  paymentAccepted: "Espèces, Virement, Chèque",
+  currenciesAccepted: "EUR",
+  servesCuisine: ["French", "Pastry", "Cake design"],
+  slogan: "L'art de la pâtisserie sur mesure à Montauban",
+  foundingDate: "2023",
+  vatID: "FR93876375200012",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "101 Route de l'Honor de Cos",
+    addressLocality: "Puycornet",
+    addressRegion: "Occitanie",
+    postalCode: "82220",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 44.1447,
+    longitude: 1.4858,
+  },
+  hasMap: "https://maps.google.com/?q=101+Route+de+l'Honor+de+Cos,+82220+Puycornet",
+  founder: {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#aurore`,
+    name: "Aurore Afchain",
+    jobTitle: "Pâtissière CAP, spécialiste wedding cake",
+    description:
+      "Aurore est pâtissière CAP, ancienne professeure des écoles reconvertie par passion. Formée en wedding cake design, elle a perfectionné son savoir-faire chez Mauranes et Alexandres à Montauban avant d'ouvrir son propre atelier Odyssée Sucrée.",
+    alumniOf: [
+      {
+        "@type": "Organization",
+        name: "Mauranes Pâtisserie Montauban",
+      },
+      {
+        "@type": "Organization",
+        name: "Alexandres Pâtisserie Montauban",
+      },
+    ],
+    worksFor: { "@id": `${SITE_URL}/#bakery` },
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Montauban",
+    },
+    {
+      "@type": "City",
+      name: "Moissac",
+    },
+    {
+      "@type": "City",
+      name: "Castelsarrasin",
+    },
+    {
+      "@type": "City",
+      name: "Caussade",
+    },
+    {
+      "@type": "City",
+      name: "Lafrançaise",
+    },
+    {
+      "@type": "City",
+      name: "Beaumont-de-Lomagne",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Tarn-et-Garonne",
+    },
+    {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: 44.1447,
+        longitude: 1.4858,
+      },
+      geoRadius: "50000",
+    },
+  ],
+  knowsAbout: [
+    "Wedding cake",
+    "Cake design",
+    "Pâtisserie de mariage",
+    "Layer cake",
+    "Number cake",
+    "Letter cake",
+    "Piñata cake",
+    "Entremets sur mesure",
+    "Pièce montée",
+    "Gâteau d'anniversaire personnalisé",
+    "Mignardises de mariage",
+    "Bûche de Noël artisanale",
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Wedding cake sur mesure Montauban",
+        description:
+          "Création de wedding cakes uniques pour mariages à Montauban et dans le Tarn-et-Garonne, conçus avec la mariée selon son thème et ses envies.",
+        provider: { "@id": `${SITE_URL}/#bakery` },
+        areaServed: "Tarn-et-Garonne",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Gâteau d'anniversaire personnalisé Montauban",
+        description:
+          "Layer cakes, number cakes, letter cakes et piñata cakes personnalisés pour anniversaires enfants et adultes à Montauban.",
+        provider: { "@id": `${SITE_URL}/#bakery` },
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Entremets et tartes sur commande",
+        description:
+          "Entremets et tartes artisanaux à commander pour vos repas et événements à Montauban et alentours.",
+        provider: { "@id": `${SITE_URL}/#bakery` },
+      },
+    },
+  ],
+  sameAs: [
+    "https://www.instagram.com/odyssee_sucree/",
+    "https://www.facebook.com/odysseesucree",
+    "https://www.puycornet.com/commerce-et-artisanat/",
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "18",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: "Odyssée Sucrée",
+  inLanguage: "fr-FR",
+  publisher: { "@id": `${SITE_URL}/#bakery` },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Accueil",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Nos créations",
+      item: `${SITE_URL}/#creations`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "À propos d'Aurore",
+      item: `${SITE_URL}/#apropos`,
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Contact et devis",
+      item: `${SITE_URL}/#contact`,
+    },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Combien coûte un wedding cake à Montauban ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Le prix d'un wedding cake chez Odyssée Sucrée dépend du nombre de parts, du nombre d'étages et de la complexité du décor. Le tarif démarre généralement à partir de 4,50 € la part pour une création simple et peut monter selon le travail de cake design demandé. Chaque devis est personnalisé après échange avec la mariée.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quel délai prévoir pour commander un gâteau sur mesure ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pour une création sur mesure, un délai minimum de 7 à 10 jours est conseillé pour les gâteaux d'anniversaire et de 4 à 8 semaines pour un wedding cake afin de réserver la date et préparer le projet ensemble.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Livrez-vous les wedding cakes sur le lieu de réception ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui. Aurore livre et installe personnellement chaque wedding cake sur le lieu de réception à Montauban, Moissac, Castelsarrasin, Caussade, Lafrançaise et dans tout le Tarn-et-Garonne, ainsi qu'autour de Toulouse sur demande.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Faut-il un acompte à la commande ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui, un acompte de 30 % est demandé à la validation de la commande pour réserver la date. Le solde est réglé à la livraison ou au retrait de la création.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Proposez-vous des créations pour les anniversaires d'enfants ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Bien sûr. Layer cakes thématiques (Stitch, Avatar, Halloween), piñata cakes surprises, number cakes : Aurore conçoit des gâteaux d'anniversaire entièrement personnalisés pour les enfants à Montauban.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Où se trouve l'atelier Odyssée Sucrée ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "L'atelier d'Aurore est situé au 101 Route de l'Honor de Cos, 82220 Puycornet, à environ 25 minutes de Montauban. Les commandes se passent par téléphone ou via le formulaire de contact du site.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quelle est la formation d'Aurore ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Aurore est titulaire du CAP Pâtissier. Ancienne professeure des écoles reconvertie par passion, elle a perfectionné son savoir-faire chez deux pâtisseries reconnues de Montauban (Mauranes et Alexandres) puis suivi récemment une formation prestigieuse spécialisée en wedding cake design.",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -75,71 +384,30 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <meta name="google-site-verification" content="o7kycFnqvuiO3LwnA3qDFIc5Ttailkuqu0l2RdeG90Q" />
+        <meta name="geo.region" content="FR-82" />
+        <meta name="geo.placename" content="Puycornet, Montauban, Tarn-et-Garonne" />
+        <meta name="geo.position" content="44.1447;1.4858" />
+        <meta name="ICBM" content="44.1447, 1.4858" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Bakery",
-              "name": "Odyssée Sucrée",
-              "image": "https://www.odysseesucree.com/logo.png",
-              "description": "Pâtisserie artisanale d'exception spécialisée dans les wedding cakes et créations sur mesure",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "101 Route de l'Honor de Cos",
-                "addressLocality": "Puycornet",
-                "postalCode": "82220",
-                "addressCountry": "FR"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 44.1447,
-                "longitude": 1.4858
-              },
-              "url": "https://www.odysseesucree.com",
-              "telephone": "+33634849182",
-              "email": "odysseesucree82@gmail.com",
-              "priceRange": "€€",
-              "servesCuisine": "French",
-              "founder": {
-                "@type": "Person",
-                "name": "Aurore",
-                "jobTitle": "Pâtissière CAP"
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              "areaServed": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": 44.1447,
-                  "longitude": 1.4858
-                },
-                "geoRadius": "50000"
-              },
-              "hasMenu": {
-                "@type": "Menu",
-                "name": "Nos créations",
-                "description": "Wedding cakes, gâteaux d'anniversaire et entremets sur mesure"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5",
-                "reviewCount": "16",
-                "bestRating": "5",
-                "worstRating": "5"
-              }
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(bakerySchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

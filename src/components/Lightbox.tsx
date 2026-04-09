@@ -8,12 +8,13 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 interface LightboxProps {
   isOpen: boolean;
   imageSrc: string;
+  imageAlt?: string;
   onClose: () => void;
   onNext?: () => void;
   onPrev?: () => void;
 }
 
-export default function Lightbox({ isOpen, imageSrc, onClose, onNext, onPrev }: LightboxProps) {
+export default function Lightbox({ isOpen, imageSrc, imageAlt, onClose, onNext, onPrev }: LightboxProps) {
   // Fermer avec la touche Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -109,7 +110,7 @@ export default function Lightbox({ isOpen, imageSrc, onClose, onNext, onPrev }: 
             >
               <Image
                 src={imageSrc}
-                alt="Création Odyssée Sucrée"
+                alt={imageAlt || "Création pâtisserie sur mesure Odyssée Sucrée Montauban"}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 90vw"

@@ -38,17 +38,18 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center mb-20"
         >
-          <Badge 
-            variant="secondary" 
+          <Badge
+            variant="secondary"
             className="mb-8 px-10 py-4 text-sm font-semibold tracking-wider uppercase"
           >
-            Mon Histoire
+            Aurore, votre pâtissière à Montauban
           </Badge>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D2D2D] mb-8 max-w-4xl">
-            Une Passion Devenue Réalité
+            Aurore Afchain : pâtissière CAP et spécialiste wedding cake
           </h2>
           <p className="text-xl text-[#6B6B6B] leading-relaxed max-w-3xl">
-            De l'enseignement à la pâtisserie, l'histoire d'une reconversion guidée par le cœur
+            De l'enseignement à la pâtisserie, l'histoire d'une reconversion guidée par la passion. Aurore conçoit
+            chacune de ses créations dans son atelier de Puycornet, à 25 minutes de Montauban.
           </p>
         </motion.div>
 
@@ -64,11 +65,12 @@ export default function About() {
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/photos site/wedding cake (2).jpeg"
-                alt="Aurore - Fondatrice d'Odyssée Sucrée"
+                src="/creations/wedding-cake-mariage-elegant-montauban.jpeg"
+                alt="Création signature wedding cake d'Aurore, fondatrice de la pâtisserie Odyssée Sucrée à Montauban"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
               />
               {/* Decorative overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#9B7AB8]/20 to-transparent" />
@@ -146,9 +148,15 @@ export default function About() {
                 </p>
                 
                 <p>
-                  J'ai obtenu mon <span className="font-semibold text-[#9B7AB8]">CAP Pâtissier</span>, puis j'ai eu 
-                  la chance de travailler chez <span className="font-semibold text-[#9B7AB8]">Mauranes et Alexandres</span> à 
-                  Montauban, des pâtisseries très réputées où j'ai perfectionné mon savoir-faire.
+                  J'ai obtenu mon <span className="font-semibold text-[#9B7AB8]">CAP Pâtissier</span>, puis j'ai eu
+                  la chance de travailler chez <span className="font-semibold text-[#9B7AB8]">Mauranes et Alexandres</span> à
+                  Montauban, deux pâtisseries très réputées où j'ai perfectionné mon savoir-faire.
+                </p>
+
+                <p>
+                  J'ai ensuite suivi une <span className="font-semibold text-[#9B7AB8]">formation prestigieuse en wedding cake design</span>,
+                  pour vous proposer des pièces montées et gâteaux de mariage à la hauteur des plus beaux jours de votre vie,
+                  partout autour de Montauban et dans le Tarn-et-Garonne.
                 </p>
                 
                 <p className="text-xl font-semibold text-[#2D2D2D] pt-4">

@@ -97,17 +97,18 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center mb-20"
         >
-          <Badge 
-            variant="secondary" 
+          <Badge
+            variant="secondary"
             className="mb-8 px-10 py-4 text-sm font-semibold tracking-wider uppercase"
           >
-            Contactez-nous
+            Devis gratuit sous 24h
           </Badge>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D2D2D] mb-8 max-w-4xl">
-            Créons Ensemble Votre Gâteau de Rêve
+            Demandez votre devis wedding cake ou gâteau personnalisé à Montauban
           </h2>
           <p className="text-xl text-[#6B6B6B] leading-relaxed max-w-3xl">
-            Partagez-nous votre projet et donnons vie à vos envies sucrées
+            Mariage, anniversaire, baptême ou événement d'entreprise : partagez votre projet à Aurore et recevez
+            une proposition personnalisée sous 24h. Livraison à Montauban, Moissac, Castelsarrasin et tout le Tarn-et-Garonne.
           </p>
         </motion.div>
 

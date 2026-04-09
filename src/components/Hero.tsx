@@ -22,12 +22,14 @@ export default function Hero() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/photos site/wedding cake (2).jpeg"
-            alt="Wedding Cake - Odyssée Sucrée"
+            src="/creations/wedding-cake-mariage-elegant-montauban.jpeg"
+            alt="Wedding cake élégant pour mariage à Montauban, création Odyssée Sucrée par Aurore, pâtissière CAP"
             fill
             priority
+            fetchPriority="high"
             className="object-cover"
-            quality={100}
+            sizes="100vw"
+            quality={75}
           />
           {/* Gradient Overlay - Plus sombre pour meilleur contraste */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30" />
@@ -65,6 +67,10 @@ export default function Hero() {
             Des créations élégantes et gourmandes, façonnées avec passion
             pour sublimer vos moments les plus précieux.
           </motion.p>
+          {/* H2 invisible pour le SEO local sans casser le visuel */}
+          <h2 className="sr-only">
+            Wedding cakes, gâteaux d'anniversaire et pâtisserie sur mesure à Montauban (Tarn-et-Garonne) par Aurore, CAP Pâtissier
+          </h2>
 
           {/* CTA Buttons */}
           <motion.div
