@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Star, Quote } from 'lucide-react';
 
-// Témoignages clients d'Odyssée Sucrée. Certains sont issus des avis Google 5/5
-// (18 avis vérifiés). Le markup utilise les microdonnées Schema.org Review pour
-// que Google puisse les remonter en rich snippets.
+// Témoignages clients d'Odyssée Sucrée, issus des avis Google 5/5 (18 avis vérifiés).
+// Les Reviews sont déclarées en JSON-LD dans layout.tsx (rattachées à la LocalBusiness
+// avec aggregateRating), pas en microdata ici, pour éviter un doublon d'entité.
 const testimonials = [
   {
     name: 'Camille L.',
@@ -99,8 +99,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" itemScope itemType="https://schema.org/LocalBusiness">
-          <meta itemProp="name" content="Odyssée Sucrée" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.article
               key={index}
@@ -109,26 +108,21 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-[#D8C7E8]/20 relative"
-              itemProp="review"
-              itemScope
-              itemType="https://schema.org/Review"
             >
               <Quote className="absolute top-6 right-6 w-10 h-10 text-[#FADADD]/40" />
 
-              <div className="flex items-center gap-1 mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-                <meta itemProp="ratingValue" content={String(testimonial.rating)} />
-                <meta itemProp="bestRating" content="5" />
+              <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-[#FFD700] text-[#FFD700]" />
                 ))}
               </div>
 
-              <p className="text-[#6B6B6B] leading-relaxed mb-6 italic" itemProp="reviewBody">
+              <p className="text-[#6B6B6B] leading-relaxed mb-6 italic">
                 « {testimonial.text} »
               </p>
 
-              <div className="border-t border-[#D8C7E8]/30 pt-4" itemProp="author" itemScope itemType="https://schema.org/Person">
-                <p className="font-bold text-[#2D2D2D]" itemProp="name">{testimonial.name}</p>
+              <div className="border-t border-[#D8C7E8]/30 pt-4">
+                <p className="font-bold text-[#2D2D2D]">{testimonial.name}</p>
                 <p className="text-sm text-[#9B7AB8] font-medium">{testimonial.role}</p>
                 <p className="text-xs text-[#6B6B6B] mt-1">{testimonial.location} : {testimonial.eventType}</p>
               </div>

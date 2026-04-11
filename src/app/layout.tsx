@@ -270,6 +270,50 @@ const bakerySchema = {
     bestRating: "5",
     worstRating: "1",
   },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Camille L." },
+      reviewBody:
+        "Notre wedding cake était à la hauteur de nos rêves. Aurore a su comprendre exactement ce que nous voulions, le résultat était magnifique et tout le monde s'est régalé. Je recommande à 100% pour tous les mariages dans le Tarn-et-Garonne.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Sophie M." },
+      reviewBody:
+        "J'ai commandé un layer cake Stitch pour les 6 ans de mon fils, c'était une vraie œuvre d'art. Les enfants étaient émerveillés et le gâteau était délicieux. Aurore est une artiste, merci !",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Julie B." },
+      reviewBody:
+        "Aurore a réalisé notre wedding cake et toutes les mignardises de notre buffet. Une qualité exceptionnelle, des saveurs incroyables et un travail artistique remarquable. Tous nos invités en parlent encore.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Marie D." },
+      reviewBody:
+        "Number cake pour mes 30 ans, fraisier XXL pour la fête des mères, bûche de Noël originale en décembre : à chaque fois c'est parfait. Aurore est sérieuse, à l'écoute et ses pâtisseries sont à tomber.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Thomas R." },
+      reviewBody:
+        "Pour le baptême de notre fille, Aurore a créé un letter cake aux fruits rouges sublime. Présentation soignée, livraison ponctuelle et goût incomparable. Une vraie professionnelle de la pâtisserie.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Aurélie P." },
+      reviewBody:
+        "Pinata cake pour l'anniversaire de ma fille, surprise garantie quand on a coupé le gâteau ! Aurore a un vrai talent et propose des créations qui sortent vraiment de l'ordinaire à Montauban.",
+    },
+  ],
 };
 
 const websiteSchema = {
