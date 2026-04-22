@@ -50,7 +50,7 @@ export default function Header() {
       ],
     },
     { label: 'Créations', href: '/#creations' },
-    { label: 'À propos', href: '/#apropos' },
+    { label: 'Journal', href: '/journal' },
     { label: 'Contact', href: '/#contact' },
   ];
 

@@ -138,10 +138,10 @@ export default function NotFound() {
               size="lg"
               className="rounded-full px-8 py-6 text-lg font-semibold hover:scale-105 transition-transform"
             >
-              <Link href="/#creations">
+              <a href="/#creations">
                 <Cake className="w-5 h-5 mr-2" />
                 Voir nos créations
-              </Link>
+              </a>
             </Button>
           </motion.div>
 

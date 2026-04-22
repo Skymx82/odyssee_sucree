@@ -10,6 +10,7 @@ export default function Footer() {
     entreprise: [
       { label: 'À propos d\'Aurore', href: '/#apropos' },
       { label: 'Nos créations', href: '/#creations' },
+      { label: 'Journal et conseils', href: '/journal' },
       { label: 'Avis clients', href: '/#temoignages' },
       { label: 'FAQ', href: '/#faq' },
       { label: 'Contact et devis', href: '/#contact' },

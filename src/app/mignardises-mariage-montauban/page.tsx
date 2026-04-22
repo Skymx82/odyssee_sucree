@@ -378,10 +378,10 @@ export default function MignardisesMariageMontaubanPage() {
             </div>
 
             <Button asChild size="lg" className="rounded-full px-12 py-7 text-lg font-semibold shadow-xl">
-              <Link href="/#contact">
+              <a href="/#contact">
                 Remplir le formulaire de devis
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </section>

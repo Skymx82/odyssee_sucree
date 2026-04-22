@@ -210,10 +210,10 @@ export default function BlogArticle({ article, sections, related }: Props) {
               l'atelier, livraison et dressage sur votre lieu de réception.
             </p>
             <Button asChild size="lg" className="rounded-full px-8 py-6 text-base font-semibold shadow-lg">
-              <Link href="/#contact">
+              <a href="/#contact">
                 Demander un devis gratuit
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </article>
