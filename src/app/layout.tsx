@@ -235,6 +235,31 @@ const bakerySchema = {
           "Création de wedding cakes uniques pour mariages à Montauban et dans le Tarn-et-Garonne, conçus avec la mariée selon son thème et ses envies.",
         provider: { "@id": `${SITE_URL}/#bakery` },
         areaServed: "Tarn-et-Garonne",
+        url: `${SITE_URL}/wedding-cake-montauban`,
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Gâteau de mariage, pièce montée et pyramide de macarons",
+        description:
+          "Gâteaux de mariage artisanaux : pièces montées traditionnelles, wedding cakes modernes, pyramides de macarons, gâteaux partagés. Livraison dans tout le Tarn-et-Garonne.",
+        provider: { "@id": `${SITE_URL}/#bakery` },
+        areaServed: "Tarn-et-Garonne",
+        url: `${SITE_URL}/gateau-mariage-montauban`,
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Mignardises et buffet de mariage",
+        description:
+          "Buffets de mignardises artisanales pour mariages : macarons, sablés personnalisés, mini-tartelettes, candy bar thématique.",
+        provider: { "@id": `${SITE_URL}/#bakery` },
+        areaServed: "Tarn-et-Garonne",
+        url: `${SITE_URL}/mignardises-mariage-montauban`,
       },
     },
     {
@@ -245,6 +270,7 @@ const bakerySchema = {
         description:
           "Layer cakes, number cakes, letter cakes et piñata cakes personnalisés pour anniversaires enfants et adultes à Montauban.",
         provider: { "@id": `${SITE_URL}/#bakery` },
+        url: `${SITE_URL}/gateau-anniversaire-montauban`,
       },
     },
     {
@@ -322,8 +348,11 @@ const websiteSchema = {
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
   name: "Odyssée Sucrée",
+  alternateName: "Odyssée Sucrée Montauban",
   inLanguage: "fr-FR",
   publisher: { "@id": `${SITE_URL}/#bakery` },
+  about: { "@id": `${SITE_URL}/#bakery` },
+  mainEntity: { "@id": `${SITE_URL}/#bakery` },
 };
 
 const breadcrumbSchema = {
@@ -363,10 +392,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Combien coûte un wedding cake à Montauban ?",
+      name: "Comment est calculé le prix d'un wedding cake à Montauban ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Le prix d'un wedding cake chez Odyssée Sucrée dépend du nombre de parts, du nombre d'étages et de la complexité du décor. Le tarif démarre généralement à partir de 4,50 € la part pour une création simple et peut monter selon le travail de cake design demandé. Chaque devis est personnalisé après échange avec la mariée.",
+        text: "Chaque wedding cake est une création unique : le prix dépend du nombre de parts, du nombre d'étages, des parfums choisis et de la complexité du travail de cake design. Il n'y a donc pas de tarif affiché sur le site. Chaque devis est personnalisé sur demande après un premier échange avec la mariée. La proposition chiffrée est envoyée sous 24h.",
       },
     },
     {

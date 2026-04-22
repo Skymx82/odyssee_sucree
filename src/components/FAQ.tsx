@@ -10,9 +10,9 @@ import { ChevronDown } from 'lucide-react';
 // corresponde au schema indexé par Google.
 const faqs = [
   {
-    question: "Combien coûte un wedding cake à Montauban ?",
+    question: "Comment est calculé le prix d'un wedding cake à Montauban ?",
     answer:
-      "Le prix d'un wedding cake chez Odyssée Sucrée dépend du nombre de parts, du nombre d'étages et de la complexité du décor. Le tarif démarre généralement à partir de 4,50 € la part pour une création simple et peut monter selon le travail de cake design demandé. Chaque devis est personnalisé après échange avec la mariée.",
+      "Chaque wedding cake est une création unique : le prix dépend du nombre de parts, du nombre d'étages, des parfums choisis et de la complexité du travail de cake design. Il n'y a donc pas de tarif affiché sur le site. Chaque devis est personnalisé sur demande après un premier échange avec la mariée. Vous recevez votre proposition chiffrée sous 24h.",
   },
   {
     question: "Quel délai prévoir pour commander un gâteau sur mesure ?",

@@ -4,10 +4,12 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LegalModals from '@/components/LegalModals';
+import FAQAccordion, { FAQItem } from '@/components/FAQAccordion';
+import RelatedPages from '@/components/RelatedPages';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { creations } from '@/data/creations';
-import { Award, Heart, Sparkles, MapPin, Phone, Mail, ArrowRight, Check } from 'lucide-react';
+import { Award, Heart, Sparkles, MapPin, Phone, Mail, ArrowRight, Check, Flower2, Cake, Users } from 'lucide-react';
 
 const SITE_URL = 'https://www.odysseesucree.com';
 const PAGE_URL = `${SITE_URL}/wedding-cake-montauban`;
@@ -15,7 +17,7 @@ const PAGE_URL = `${SITE_URL}/wedding-cake-montauban`;
 export const metadata: Metadata = {
   title: "Wedding Cake Montauban : Pâtissière Spécialiste Mariage Tarn-et-Garonne",
   description:
-    "Wedding cake sur mesure à Montauban par Aurore, pâtissière CAP formée en wedding cake design. Pièces montées élégantes, livraison Montauban, Moissac, Castelsarrasin et tout le 82. Devis sous 24h.",
+    "Wedding cake sur mesure à Montauban par Aurore, pâtissière CAP formée en wedding cake design. Pièces montées élégantes à étages, saveurs à la carte, livraison Montauban, Moissac, Castelsarrasin et tout le 82. Devis gratuit sous 24h.",
   keywords: [
     "wedding cake Montauban",
     "wedding cake Tarn-et-Garonne",
@@ -25,11 +27,12 @@ export const metadata: Metadata = {
     "gâteau mariage Castelsarrasin",
     "cake designer mariage Montauban",
     "wedding cake Caussade",
-    "wedding cake Lafrançaise",
+    "wedding cake étages",
+    "wedding cake fleurs fraîches",
+    "wedding cake naked cake Montauban",
+    "wedding cake bohème Montauban",
   ],
-  alternates: {
-    canonical: PAGE_URL,
-  },
+  alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Wedding Cake Montauban : Pâtissière Spécialiste Mariage",
     description:
@@ -70,18 +73,7 @@ const servicePageSchema = {
     { '@type': 'AdministrativeArea', name: 'Tarn-et-Garonne' },
   ],
   description:
-    "Création artisanale de wedding cakes et pièces montées de mariage sur mesure à Montauban. Aurore, pâtissière CAP formée en wedding cake design, conçoit chaque gâteau de mariage selon le thème et les envies des mariés.",
-  offers: {
-    '@type': 'AggregateOffer',
-    priceCurrency: 'EUR',
-    lowPrice: '4.50',
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      priceCurrency: 'EUR',
-      price: '4.50',
-      unitText: 'par part',
-    },
-  },
+    "Création artisanale de wedding cakes et pièces montées de mariage sur mesure à Montauban. Aurore, pâtissière CAP formée en wedding cake design, conçoit chaque gâteau de mariage selon le thème et les envies des mariés. Devis personnalisé sur demande.",
   url: PAGE_URL,
 };
 
@@ -90,8 +82,62 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
-    { '@type': 'ListItem', position: 2, name: 'Wedding cake Montauban', item: PAGE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Mariage', item: `${SITE_URL}/#contact` },
+    { '@type': 'ListItem', position: 3, name: 'Wedding cake Montauban', item: PAGE_URL },
   ],
+};
+
+const weddingFaqs: FAQItem[] = [
+  {
+    question: "Qu'est-ce qui distingue un wedding cake d'une pièce montée classique ?",
+    answer:
+      "La pièce montée française traditionnelle est composée de choux caramélisés empilés en pyramide. Le wedding cake, d'inspiration anglo-saxonne, est un gâteau à étages recouvert de crème, ganache ou pâte à sucre, décoré sur-mesure selon le thème du mariage. Odyssée Sucrée réalise les deux, avec une spécialisation dans le wedding cake moderne et élégant : naked cake, semi-naked, fleurs fraîches, drapé de crème, effets marbre ou métallique.",
+  },
+  {
+    question: "Combien de temps à l'avance faut-il réserver son wedding cake ?",
+    answer:
+      "Pour un mariage à Montauban, il est conseillé de réserver entre 4 et 8 semaines à l'avance, surtout pour la haute saison (mai à septembre). Les meilleures dates partent vite : pour un mariage un samedi d'été, réserver 3 mois avant est l'idéal. Un acompte de 30 % valide la réservation de la date dans le planning d'Aurore.",
+  },
+  {
+    question: "Combien d'étages et de parts peut avoir un wedding cake ?",
+    answer:
+      "Odyssée Sucrée réalise des wedding cakes de 2 à 5 étages, pour des mariages de 20 à 200 invités. Le nombre d'étages dépend du nombre de convives mais aussi de l'effet visuel recherché. Pour les très grands mariages (150 invités et plus), nous combinons souvent un wedding cake à étages pour la présentation et des desserts additionnels (mignardises, buffet, entremets) pour compléter les parts.",
+  },
+  {
+    question: "Quels parfums peut-on choisir pour un wedding cake ?",
+    answer:
+      "Vanille-fraise, chocolat-passion, framboise-pistache, citron-basilic, caramel-noisette, pina colada, mangue-coco : la liste des parfums est quasi infinie. Chaque étage peut avoir son propre parfum. Lors du premier rendez-vous, Aurore vous propose les associations qu'elle recommande selon vos goûts et la saison du mariage.",
+  },
+  {
+    question: "Peut-on avoir de vraies fleurs sur un wedding cake ?",
+    answer:
+      "Oui, c'est même une demande très courante. Aurore travaille soit avec des fleurs fraîches comestibles (roses non traitées, pensées, bleuets, lavande), soit avec des fleurs en pâte à sucre qu'elle réalise à la main pour un effet durable et photogénique. Pour les fleurs fraîches, la coordination avec le fleuriste du mariage est organisée en amont.",
+  },
+  {
+    question: "Livrez-vous les wedding cakes sur le lieu de réception ?",
+    answer:
+      "Oui, systématiquement. Aurore livre et installe personnellement chaque wedding cake sur le lieu de réception : château, domaine, salle des fêtes, restaurant, jardin privé. Elle vérifie la stabilité, installe les fleurs fraîches, prend des photos de la création avant de laisser les mariés profiter de leur journée. Zones couvertes : Montauban, Moissac, Castelsarrasin, Caussade, Lafrançaise, Beaumont-de-Lomagne et tout le Tarn-et-Garonne. Sur demande, déplacement vers Toulouse et le nord du Tarn.",
+  },
+  {
+    question: "Faites-vous aussi les mignardises et desserts du buffet de mariage ?",
+    answer:
+      "Oui. Odyssée Sucrée propose des prestations complémentaires : candy bar, buffet de mignardises (macarons, cannelés, éclairs, tartelettes), sablés personnalisés aux initiales des mariés, entremets XXL. Commander wedding cake et buffet chez le même pâtissier garantit une cohérence visuelle et gustative totale le jour J.",
+  },
+  {
+    question: "Comment se passe l'échange pour concevoir le design ?",
+    answer:
+      "Tout commence par un premier contact (téléphone, email ou formulaire) où vous décrivez votre mariage : date, lieu, thème, couleurs, nombre d'invités, parfums souhaités. Aurore vous envoie un devis personnalisé sous 24h. Après validation et acompte, elle vous propose un croquis ou une référence visuelle du wedding cake à approuver. Une dégustation peut être organisée sur rendez-vous à l'atelier de Puycornet.",
+  },
+];
+
+const weddingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: weddingFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
 };
 
 export default function WeddingCakeMontaubanPage() {
@@ -104,6 +150,10 @@ export default function WeddingCakeMontaubanPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(weddingFaqSchema) }}
       />
 
       <Header />
@@ -120,7 +170,6 @@ export default function WeddingCakeMontaubanPage() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
             <Badge variant="secondary" className="mb-6 px-8 py-3 text-sm font-semibold uppercase tracking-wider">
               Pâtissière spécialiste wedding cake
@@ -129,8 +178,9 @@ export default function WeddingCakeMontaubanPage() {
               Wedding Cake sur Mesure à Montauban
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl mb-10 font-light">
-              Aurore, pâtissière CAP formée en wedding cake design, crée la pièce montée de vos rêves pour
-              votre mariage à Montauban et dans tout le Tarn-et-Garonne.
+              Aurore, pâtissière CAP formée en wedding cake design, imagine la pièce montée de vos rêves pour
+              votre mariage à Montauban et dans tout le Tarn-et-Garonne. Chaque création est unique, pensée avec
+              vous, livrée sur votre lieu de réception.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="rounded-full px-10 py-7 text-base font-semibold shadow-2xl">
@@ -151,8 +201,35 @@ export default function WeddingCakeMontaubanPage() {
           </div>
         </section>
 
+        {/* Introduction éditoriale */}
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <div className="prose prose-lg mx-auto text-[#2D2D2D]">
+              <p className="text-xl leading-relaxed text-[#6B6B6B] mb-6">
+                Le wedding cake est devenu la pièce maîtresse des mariages modernes à Montauban et dans le
+                Tarn-et-Garonne. À la fois gâteau, sculpture comestible et élément central de la décoration,
+                il symbolise l'union et le partage. Pour qu'il soit à la hauteur de votre journée, il mérite d'être
+                confié à un pâtissier qui pense chaque détail avec vous.
+              </p>
+              <p className="text-lg leading-relaxed text-[#6B6B6B] mb-6">
+                Aurore a choisi de se spécialiser dans le wedding cake design après son CAP Pâtissier. Formée
+                aux dernières techniques auprès de référents reconnus, elle a ouvert l'atelier Odyssée Sucrée à
+                Puycornet, à 25 minutes de Montauban, pour créer des wedding cakes qui allient élégance visuelle
+                et saveurs artisanales. Jamais deux fois le même gâteau : chaque pièce montée est imaginée à
+                partir de votre histoire, de votre thème et de votre lieu de réception.
+              </p>
+              <p className="text-lg leading-relaxed text-[#6B6B6B]">
+                Que vous prépariez un mariage intime de 20 convives dans un jardin de Moissac ou une grande
+                réception de 180 invités dans un château autour de Montauban, cette page vous explique tout :
+                comment se passe la création d'un wedding cake, les styles possibles, les parfums disponibles, les
+                délais, la livraison et les questions que toutes les mariées se posent.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Pourquoi choisir Aurore */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-to-b from-white to-[#F3E8FF]/30">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-[#2D2D2D] mb-6">
@@ -169,7 +246,7 @@ export default function WeddingCakeMontaubanPage() {
                 {
                   icon: Award,
                   title: 'Formation prestigieuse en wedding cake design',
-                  text: "Aurore a récemment suivi une formation spécialisée en wedding cake auprès de référents reconnus, en plus de son CAP Pâtissier et de son expérience chez Mauranes et Alexandres à Montauban.",
+                  text: "Aurore a suivi une formation spécialisée en wedding cake auprès de référents reconnus, en plus de son CAP Pâtissier et de son expérience chez Mauranes et Alexandres à Montauban.",
                 },
                 {
                   icon: Heart,
@@ -184,7 +261,7 @@ export default function WeddingCakeMontaubanPage() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-gradient-to-br from-white to-[#F3E8FF]/30 rounded-2xl p-8 shadow-lg border border-[#D8C7E8]/30"
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-[#D8C7E8]/30"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FADADD] to-[#D8C7E8] flex items-center justify-center mb-6">
                     <item.icon className="w-8 h-8 text-white" />
@@ -197,7 +274,57 @@ export default function WeddingCakeMontaubanPage() {
           </div>
         </section>
 
-        {/* Le processus de création */}
+        {/* Les styles de wedding cakes */}
+        <section className="py-24 bg-white" id="styles">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-[#2D2D2D] mb-6">
+                Les styles de wedding cakes proposés à Montauban
+              </h2>
+              <p className="text-xl text-[#6B6B6B] max-w-3xl mx-auto">
+                Tendances, grands classiques, créations audacieuses : voici les grandes familles de
+                wedding cakes que nous réalisons pour les mariages en Tarn-et-Garonne.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-10">
+              {[
+                {
+                  icon: Flower2,
+                  title: 'Wedding cake fleuri et romantique',
+                  text: "Le style le plus demandé à Montauban. Glaçage pastel, fleurs fraîches ou en pâte à sucre, touches de doré : parfait pour un mariage champêtre, bohème ou pastel.",
+                },
+                {
+                  icon: Cake,
+                  title: 'Naked cake et semi-naked cake',
+                  text: "Gâteau peu ou pas glacé qui laisse apparaître la génoise et la crème. Très tendance pour les mariages rustiques ou outdoor. Décoration discrète : fruits rouges, feuillage, roses fraîches.",
+                },
+                {
+                  icon: Sparkles,
+                  title: 'Wedding cake moderne et graphique',
+                  text: "Effet marbre, drapé de crème, dorures métalliques, géométrie épurée : pour les mariages contemporains qui cherchent un wedding cake pièce d'art.",
+                },
+                {
+                  icon: Users,
+                  title: 'Pièce montée traditionnelle revisitée',
+                  text: "Vous aimez la pièce montée française ? Aurore la revisite : choux caramélisés mais posés sur un socle de gâteau à étages, mix des deux univers pour contenter toutes les générations.",
+                },
+              ].map((style, i) => (
+                <div key={i} className="flex gap-6 bg-gradient-to-br from-white to-[#F3E8FF]/20 rounded-2xl p-8 border border-[#D8C7E8]/30">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FADADD] to-[#D8C7E8] flex items-center justify-center">
+                    <style.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#2D2D2D] mb-3">{style.title}</h3>
+                    <p className="text-[#6B6B6B] leading-relaxed">{style.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Le processus */}
         <section className="py-24 bg-gradient-to-b from-white to-[#F3E8FF]/30">
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -214,7 +341,7 @@ export default function WeddingCakeMontaubanPage() {
               {[
                 {
                   title: '1. Premier échange et devis personnalisé sous 24h',
-                  text: "Vous me contactez via le formulaire ou par téléphone. Je vous pose les bonnes questions : date du mariage, lieu de réception, nombre d'invités, thème, envies de saveurs et budget. Vous recevez votre devis personnalisé sous 24h.",
+                  text: "Vous me contactez via le formulaire, email ou téléphone. Je vous pose les bonnes questions : date du mariage, lieu de réception, nombre d'invités, thème, envies de saveurs. Le devis chiffré et personnalisé est envoyé sous 24h.",
                 },
                 {
                   title: '2. Validation du projet et acompte de 30 %',
@@ -300,7 +427,7 @@ export default function WeddingCakeMontaubanPage() {
                 'Lafrançaise',
                 'Beaumont-de-Lomagne',
                 'Nègrepelisse',
-                'Valence d\'Agen',
+                "Valence d'Agen",
                 'Puycornet',
                 'Molières',
                 'Lauzerte',
@@ -323,6 +450,15 @@ export default function WeddingCakeMontaubanPage() {
           </div>
         </section>
 
+        {/* FAQ dédiée wedding cake */}
+        <FAQAccordion
+          badge="Questions wedding cake"
+          title="Tout ce que les mariées nous demandent à Montauban"
+          intro="Délais, étages, parfums, fleurs fraîches, livraison : les réponses aux questions les plus fréquentes avant de commander votre wedding cake."
+          items={weddingFaqs}
+          id="faq-wedding"
+        />
+
         {/* CTA Devis */}
         <section className="py-24 bg-gradient-to-br from-[#FADADD]/30 to-[#D8C7E8]/30" id="devis-wedding">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
@@ -331,7 +467,7 @@ export default function WeddingCakeMontaubanPage() {
             </h2>
             <p className="text-xl text-[#6B6B6B] mb-12">
               Recevez votre devis personnalisé sous 24h. Contactez Aurore directement par téléphone ou via le
-              formulaire de contact d'Odyssée Sucrée.
+              formulaire d'Odyssée Sucrée.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -386,6 +522,29 @@ export default function WeddingCakeMontaubanPage() {
             </ul>
           </div>
         </section>
+
+        {/* Maillage interne */}
+        <RelatedPages
+          title="Envie d'aller plus loin pour votre mariage ?"
+          intro="Explorez les autres prestations et articles qui peuvent compléter votre wedding cake."
+          links={[
+            {
+              href: '/gateau-mariage-montauban',
+              title: 'Gâteau de mariage et pièce montée',
+              description: "Les alternatives classiques au wedding cake : pièce montée de choux, pyramide de macarons, gâteaux partagés pour grandes tablées.",
+            },
+            {
+              href: '/mignardises-mariage-montauban',
+              title: 'Mignardises et buffet de mariage',
+              description: "Candy bar, macarons, sablés personnalisés, mini-desserts : complétez votre wedding cake avec un buffet sucré cohérent.",
+            },
+            {
+              href: '/journal/wedding-cake-vs-piece-montee',
+              title: 'Wedding cake ou pièce montée : que choisir ?',
+              description: "Notre guide comparatif pour trancher entre wedding cake moderne et pièce montée traditionnelle française.",
+            },
+          ]}
+        />
 
         <Footer />
       </main>

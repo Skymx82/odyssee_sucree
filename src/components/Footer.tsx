@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
@@ -17,16 +16,23 @@ export default function Footer() {
     ],
     services: [
       { label: 'Wedding cake Montauban', href: '/wedding-cake-montauban' },
-      { label: 'Gâteau anniversaire Montauban', href: '/gateau-anniversaire-montauban' },
-      { label: 'Entremets sur commande', href: '/#creations' },
-      { label: 'Tartes artisanales', href: '/#creations' },
-      { label: 'Mignardises de mariage', href: '/#creations' },
+      { label: 'Gâteau de mariage', href: '/gateau-mariage-montauban' },
+      { label: 'Mignardises de mariage', href: '/mignardises-mariage-montauban' },
+      { label: 'Gâteau anniversaire', href: '/gateau-anniversaire-montauban' },
+      { label: 'Créations artisanales', href: '/#creations' },
+    ],
+    zones: [
+      { label: 'Montauban', href: '/wedding-cake-montauban' },
+      { label: 'Moissac', href: '/patissier-moissac' },
+      { label: 'Castelsarrasin', href: '/patissier-castelsarrasin' },
+      { label: 'Caussade', href: '/patissier-caussade' },
+      { label: 'Puycornet et Tarn-et-Garonne', href: '/#contact' },
     ],
     legal: [
-      { label: 'Mentions légales', href: '#mentions-legales' },
-      { label: 'CGV', href: '#cgv' },
-      { label: 'Politique de confidentialité', href: '#confidentialite' },
-      { label: 'Politique des cookies', href: '#cookies' },
+      { label: 'Mentions légales', href: '/#mentions-legales' },
+      { label: 'CGV', href: '/#cgv' },
+      { label: 'Politique de confidentialité', href: '/#confidentialite' },
+      { label: 'Politique des cookies', href: '/#cookies' },
     ],
   };
 
@@ -50,7 +56,7 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Pâtisserie artisanale d'exception. Créations sur mesure pour vos événements.
+              Pâtisserie artisanale d'exception. Créations sur mesure pour vos mariages, anniversaires et événements en Tarn-et-Garonne.
             </p>
             <div className="flex gap-4">
               <a
@@ -91,7 +97,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services SEO */}
+          {/* Prestations */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-[#FADADD]">Nos prestations</h4>
             <ul className="space-y-3">
@@ -108,11 +114,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Légal */}
+          {/* Zones d'intervention */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-[#FADADD]">Informations légales</h4>
+            <h4 className="text-lg font-semibold mb-6 text-[#FADADD]">Zones d'intervention</h4>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
+              {footerLinks.zones.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -152,28 +158,42 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* Ligne légale */}
         <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+              {footerLinks.legal.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="hover:text-[#9B7AB8] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-400 text-sm">
+              SIRET : <span className="text-gray-300">938 763 752 00012</span> | Auto-entrepreneur
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6">
             <p className="text-gray-400 text-sm text-center md:text-left">
               © {currentYear} Odyssée Sucrée. Tous droits réservés.
             </p>
-            <p className="text-gray-400 text-sm text-center md:text-right">
-              SIRET : <span className="text-gray-300">938 763 752 00012</span> | 
-              Auto-entrepreneur
+            <p className="text-gray-500 text-xs text-center">
+              Site réalisé par{' '}
+              <a
+                href="https://www.tolarys-toulouse.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9B7AB8] hover:underline font-medium"
+              >
+                Tolarys
+              </a>
             </p>
           </div>
-          <p className="text-gray-500 text-xs text-center mt-4">
-            Site réalisé par{' '}
-            <a 
-              href="https://www.tolarys-toulouse.fr/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#9B7AB8] hover:underline font-medium"
-            >
-              Tolarys
-            </a>
-          </p>
         </div>
       </div>
 
@@ -181,9 +201,9 @@ export default function Footer() {
       <div className="bg-black/30 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <p className="text-gray-400 text-xs text-center">
-            🔒 Vos données personnelles sont protégées conformément au RGPD. 
+            Vos données personnelles sont protégées conformément au RGPD.
             En utilisant notre formulaire de contact, vous acceptez notre{' '}
-            <a href="#confidentialite" className="text-[#9B7AB8] hover:underline">
+            <a href="/#confidentialite" className="text-[#9B7AB8] hover:underline">
               politique de confidentialité
             </a>.
           </p>

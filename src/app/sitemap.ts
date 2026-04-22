@@ -1,11 +1,12 @@
 import { MetadataRoute } from 'next';
+import { articles } from '@/data/articles';
 
 const SITE_URL = 'https://www.odysseesucree.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
       lastModified: now,
@@ -19,16 +20,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${SITE_URL}/gateau-mariage-montauban`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/mignardises-mariage-montauban`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/gateau-anniversaire-montauban`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.95,
     },
     {
+      url: `${SITE_URL}/patissier-moissac`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/patissier-castelsarrasin`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/patissier-caussade`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/journal`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/#creations`,
       lastModified: now,
       changeFrequency: 'weekly',
-      priority: 0.85,
+      priority: 0.75,
     },
     {
       url: `${SITE_URL}/#temoignages`,
@@ -55,4 +92,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
   ];
+
+  const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${SITE_URL}/journal/${a.slug}`,
+    lastModified: a.updatedAt ? new Date(a.updatedAt) : new Date(a.publishedAt),
+    changeFrequency: 'monthly',
+    priority: 0.75,
+  }));
+
+  return [...staticPages, ...articlePages];
 }
