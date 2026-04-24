@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown } from 'lucide-react';
 
-// Les questions ici sont la copie exacte du JSON-LD FAQPage présent dans layout.tsx.
+// Les questions ici sont la copie exacte du JSON-LD FAQPage injecté dans app/page.tsx.
 // Toute modification doit être répercutée des deux côtés pour que le contenu visible
 // corresponde au schema indexé par Google.
 const faqs = [
