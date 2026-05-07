@@ -49,6 +49,7 @@ export default function Header() {
         { label: 'Piñata cake', href: '/gateau-anniversaire-montauban#pinata-cake' },
       ],
     },
+    { label: 'Pâtisserie Montauban', href: '/patisserie-montauban' },
     { label: 'Créations', href: '/#creations' },
     { label: 'Journal', href: '/journal' },
     { label: 'Contact', href: '/#contact' },
@@ -100,7 +101,7 @@ export default function Header() {
           </motion.a>
 
           {/* Navigation Desktop */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6">
             {navItems.map((item, index) => {
               if (item.children) {
                 const isOpen = openDropdown === item.label;

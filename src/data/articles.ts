@@ -15,6 +15,28 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'qu-est-ce-qu-un-wedding-cake',
+    title: "Qu'est-ce qu'un wedding cake ? Définition, origines et formats",
+    excerpt:
+      "Tout sur le wedding cake : son histoire, ce qui le différencie de la pièce montée, sa structure à étages, ses parfums et comment il s'est imposé dans les mariages français.",
+    metaTitle: "Qu'est-ce qu'un wedding cake ? Définition complète et histoire",
+    metaDescription:
+      "Le wedding cake, c'est quoi exactement ? Définition, origines anglo-saxonnes, structure à étages, parfums, différence avec la pièce montée. Le guide d'une pâtissière.",
+    cover: '/creations/wedding-cake-mariage-3-etages-montauban.jpeg',
+    coverAlt: "Wedding cake à étages, exemple typique du gâteau de mariage anglo-saxon",
+    publishedAt: '2026-05-07',
+    readTime: '4 min de lecture',
+    keywords: [
+      "qu'est-ce qu'un wedding cake",
+      'wedding cake définition',
+      'wedding cake histoire',
+      'wedding cake origine',
+      'wedding cake étages',
+      'wedding cake France',
+    ],
+    tags: ['Mariage', 'Définition', 'Wedding cake'],
+  },
+  {
     slug: 'choisir-wedding-cake-2026',
     title: "Comment choisir son wedding cake en 2026 ?",
     excerpt:
@@ -40,9 +62,9 @@ export const articles: Article[] = [
     title: "Wedding cake ou pièce montée : que choisir pour son mariage ?",
     excerpt:
       "Notre comparatif complet entre les deux grands classiques du gâteau de mariage. Budget, esthétique, tradition, nombre de parts, tout ce qui sépare les deux formats.",
-    metaTitle: "Wedding cake ou pièce montée : le comparatif pour choisir",
+    metaTitle: "Wedding cake ou pièce montée : lequel choisir en 2026 ? Le verdict",
     metaDescription:
-      "Wedding cake ou pièce montée ? Comparatif détaillé : budget, style, nombre de parts, tradition, dégustation. Le guide pour choisir sans hésitation.",
+      "Wedding cake ou pièce montée pour votre mariage ? Comparatif clair : prix, style, nombre de parts, tradition. Le guide d'une pâtissière artisanale pour trancher sans regret.",
     cover: '/creations/wedding-cake-mariage-3-etages-montauban.jpeg',
     coverAlt: "Wedding cake à étages à comparer avec une pièce montée traditionnelle",
     publishedAt: '2026-04-18',

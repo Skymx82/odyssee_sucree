@@ -9,9 +9,9 @@ const SITE_URL = 'https://www.odysseesucree.com';
 const PAGE_URL = `${SITE_URL}/patissier-caussade`;
 
 export const metadata: Metadata = {
-  title: "Pâtissière à Caussade : Wedding Cake, Anniversaire et Mignardises",
+  title: "Pâtisserie à Caussade : Wedding Cake, Gâteau Mariage et Anniversaire",
   description:
-    "Pâtissière artisanale à Caussade (82300) : wedding cakes, gâteaux d'anniversaire, mignardises de mariage sur commande. Livraison par Aurore depuis Puycornet, à 25 min. Devis gratuit sous 24h.",
+    "Pâtisserie artisanale à Caussade (82300) : wedding cakes, gâteaux de mariage, anniversaires personnalisés et mignardises sur commande. Aurore livre dans tout le Quercy. Devis gratuit sous 24h.",
   keywords: [
     "pâtissier Caussade",
     "pâtissière Caussade",

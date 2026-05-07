@@ -8,7 +8,7 @@ import { MapPin, ArrowRight } from 'lucide-react';
 const zones = [
   {
     city: 'Montauban',
-    href: '/wedding-cake-montauban',
+    href: '/patisserie-montauban',
     distance: '30 min',
     description: 'Préfecture du Tarn-et-Garonne, zone principale d\'intervention.',
   },

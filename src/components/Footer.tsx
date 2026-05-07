@@ -23,7 +23,7 @@ export default function Footer() {
       { label: 'Créations artisanales', href: '/#creations' },
     ],
     zones: [
-      { label: 'Montauban', href: '/wedding-cake-montauban' },
+      { label: 'Montauban', href: '/patisserie-montauban' },
       { label: 'Moissac', href: '/patissier-moissac' },
       { label: 'Castelsarrasin', href: '/patissier-castelsarrasin' },
       { label: 'Caussade', href: '/patissier-caussade' },
