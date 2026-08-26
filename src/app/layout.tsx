@@ -254,6 +254,18 @@ const bakerySchema = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        name: "Pièce montée et croquembouche Montauban",
+        description:
+          "Pièces montées artisanales de choux caramélisés avec nougatine personnalisée, pour mariages, baptêmes, communions et anniversaires dans le Tarn-et-Garonne.",
+        provider: { "@id": `${SITE_URL}/#bakery` },
+        areaServed: "Tarn-et-Garonne",
+        url: `${SITE_URL}/piece-montee-montauban`,
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
         name: "Mignardises et buffet de mariage",
         description:
           "Buffets de mignardises artisanales pour mariages : macarons, sablés personnalisés, mini-tartelettes, candy bar thématique.",

@@ -539,9 +539,9 @@ export default function WeddingCakeMontaubanPage() {
               description: "Candy bar, macarons, sablés personnalisés, mini-desserts : complétez votre wedding cake avec un buffet sucré cohérent.",
             },
             {
-              href: '/journal/wedding-cake-vs-piece-montee',
-              title: 'Wedding cake ou pièce montée : que choisir ?',
-              description: "Notre guide comparatif pour trancher entre wedding cake moderne et pièce montée traditionnelle française.",
+              href: '/journal/prix-wedding-cake-2026',
+              title: 'Prix d\'un wedding cake : le guide',
+              description: "Fourchettes de prix, nombre de parts, facteurs qui font varier le devis : tout pour budgéter sereinement votre gâteau de mariage.",
             },
           ]}
         />

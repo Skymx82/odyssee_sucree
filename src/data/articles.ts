@@ -15,13 +15,38 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'prix-wedding-cake-2026',
+    title: "Prix d'un wedding cake : combien coûte un gâteau de mariage ?",
+    excerpt:
+      "Fourchettes de prix au réel, nombre de parts, facteurs qui font varier le tarif, pièges des offres trop bon marché : le guide transparent d'une pâtissière pour budgéter votre wedding cake ou votre pièce montée.",
+    metaTitle: "Prix d'un wedding cake 2026 : tarifs, parts et budget mariage",
+    metaDescription:
+      "Combien coûte un wedding cake en 2026 ? Prix par part, tarif d'une pièce montée, nombre de parts à prévoir, facteurs qui font varier le devis. Le guide transparent d'une pâtissière.",
+    cover: '/creations/wedding-cake-monogramme-or-roses-sucre-montauban.jpeg',
+    coverAlt: "Wedding cake 3 étages avec monogramme doré et roses en sucre, création Odyssée Sucrée Montauban",
+    publishedAt: '2026-08-26',
+    readTime: '6 min de lecture',
+    keywords: [
+      'prix wedding cake',
+      'wedding cake prix',
+      'combien coûte un wedding cake',
+      'prix gâteau mariage',
+      'prix pièce montée mariage',
+      'nombre de parts wedding cake',
+      'budget gâteau mariage',
+      'wedding cake pas cher',
+    ],
+    tags: ['Mariage', 'Prix', 'Wedding cake'],
+  },
+  {
     slug: 'qu-est-ce-qu-un-wedding-cake',
     title: "Qu'est-ce qu'un wedding cake ? Définition, origines et formats",
     excerpt:
       "Tout sur le wedding cake : son histoire, ce qui le différencie de la pièce montée, sa structure à étages, ses parfums et comment il s'est imposé dans les mariages français.",
-    metaTitle: "Qu'est-ce qu'un wedding cake ? Définition complète et histoire",
+    metaTitle: "Wedding cake : définition, origines, parts et prix expliqués simplement",
     metaDescription:
-      "Le wedding cake, c'est quoi exactement ? Définition, origines anglo-saxonnes, structure à étages, parfums, différence avec la pièce montée. Le guide d'une pâtissière.",
+      "Wedding cake : traduction, définition et histoire du gâteau de mariage à étages. Structure, parfums, nombre de parts, différence avec la pièce montée et idée de prix. Expliqué par une pâtissière.",
+    updatedAt: '2026-08-26',
     cover: '/creations/wedding-cake-mariage-3-etages-montauban.jpeg',
     coverAlt: "Wedding cake à étages, exemple typique du gâteau de mariage anglo-saxon",
     publishedAt: '2026-05-07',

@@ -7,6 +7,13 @@ import { BookOpen, ArrowRight } from 'lucide-react';
 
 const articles = [
   {
+    title: "Prix d'un wedding cake : combien ça coûte ?",
+    href: '/journal/prix-wedding-cake-2026',
+    excerpt:
+      "Fourchettes de prix réelles, nombre de parts à prévoir, facteurs qui font varier le devis et pièges des offres trop bon marché : le guide transparent d'une pâtissière.",
+    readTime: '6 min de lecture',
+  },
+  {
     title: 'Comment choisir son wedding cake en 2026 ?',
     href: '/journal/choisir-wedding-cake-2026',
     excerpt:
@@ -58,7 +65,7 @@ export default function Conseils() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {articles.map((article, i) => (
             <motion.article
               key={article.href}

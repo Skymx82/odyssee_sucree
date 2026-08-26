@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/piece-montee-montauban`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
       url: `${SITE_URL}/gateau-anniversaire-montauban`,
       lastModified: now,
       changeFrequency: 'monthly',

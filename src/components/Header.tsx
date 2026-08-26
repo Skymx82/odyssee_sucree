@@ -36,6 +36,7 @@ export default function Header() {
       children: [
         { label: 'Wedding cake', href: '/wedding-cake-montauban' },
         { label: 'Gâteau de mariage', href: '/gateau-mariage-montauban' },
+        { label: 'Pièce montée', href: '/piece-montee-montauban' },
         { label: 'Mignardises et buffet', href: '/mignardises-mariage-montauban' },
       ],
     },

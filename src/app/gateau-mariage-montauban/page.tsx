@@ -411,9 +411,9 @@ export default function GateauMariageMontaubanPage() {
               description: "Complétez le gâteau principal avec un buffet de mignardises : macarons, sablés personnalisés, mini-tartelettes.",
             },
             {
-              href: '/journal/wedding-cake-vs-piece-montee',
-              title: 'Wedding cake ou pièce montée ?',
-              description: "Notre comparatif détaillé pour vous aider à trancher entre les deux grands classiques du gâteau de mariage.",
+              href: '/piece-montee-montauban',
+              title: 'Pièce montée et croquembouche',
+              description: "La pièce montée traditionnelle française : choux caramélisés, nougatine personnalisée, pour mariage, baptême ou communion.",
             },
           ]}
         />
