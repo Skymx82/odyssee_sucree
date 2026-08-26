@@ -42,7 +42,7 @@ export default function Gallery() {
             Nos créations de pâtisserie sur mesure
           </h2>
           <p className="text-xl text-[#6B6B6B] leading-relaxed max-w-3xl">
-            Wedding cakes, layer cakes, number cakes, entremets et tartes artisanales. Plus de 50 créations imaginées
+            Wedding cakes, layer cakes, number cakes, entremets et tartes artisanales. Plus de 100 créations imaginées
             par Aurore pour les mariages et anniversaires à Montauban, Moissac, Castelsarrasin et dans tout le Tarn-et-Garonne.
           </p>
         </motion.div>
